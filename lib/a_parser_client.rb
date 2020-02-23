@@ -2,7 +2,6 @@ require "a_parser_client/version"
 
 module AParserClient
   class Error < StandardError; end
-  # Your code goes here...
 
   class API
   	require "json"
@@ -14,7 +13,7 @@ module AParserClient
   	def initialize(api_url, api_password)
   		@api_url = api_url
   		@api_password = api_password	
-  		@alive = self.alive?
+  		@alive = self.alive? #fails whenever url is bad
   	end
 
 	def ping_a_parser
@@ -28,7 +27,7 @@ module AParserClient
 	#updates alive status
 	def alive?
 		@alive = ping_a_parser ? true : false
-	end  	
+	end  
 
 
 	def get_task_list(completed=false)
@@ -39,6 +38,62 @@ module AParserClient
 		}
 		do_it request
 	end
+
+	def get_task_state(task_id)
+		request = {
+			password: @api_password, 
+			action: 'getTasksState',
+			data: {taskUid: task_id}
+		}
+		do_it request
+	end
+
+	def get_task_conf(task_id)
+		request = {
+			password: @api_password, 
+			action: 'getTasksConf',
+			data: {taskUid: task_id}
+		}
+		do_it request
+	end
+
+
+	def get_info
+		request = {
+			password: 	@api_password, 
+			action: 	'info',
+		}
+		do_it request
+	end
+
+	def add_task(task_type='text', queries_array=[], queries_file=nil, config, preset, parsers, result_file_name)
+		request = {
+			password: 	@api_password, 
+			action: 	'addTask',
+			data: {
+				queriesFrom: task_type, 
+				queries: task_type == 'text' ? queries_array : queries_file
+				configPreset: config, 
+				preset: preset, 
+				parsers: parsers, 
+				resultsFileName: result_file_name
+			}
+		}
+		do_it request
+	end
+
+	def change_task_status(task_id, to_status)
+		request = {
+			password: @api_password, 
+			action: 'changeTaskStatus',
+			data: {
+				taskUid: task_id,
+				toStatus: to_status
+			}
+		}
+		do_it request		
+	end
+
 
 		private # internal use only
 
