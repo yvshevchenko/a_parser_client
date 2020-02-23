@@ -72,7 +72,7 @@ module AParserClient
 			action: 	'addTask',
 			data: {
 				queriesFrom: task_type, 
-				queries: task_type == 'text' ? queries_array : queries_file
+				queries: (task_type == 'text' ? queries_array : queries_file),
 				configPreset: config, 
 				preset: preset, 
 				parsers: parsers, 
