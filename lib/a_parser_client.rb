@@ -11,9 +11,13 @@ module AParserClient
   	attr :api_url, :api_password, :alive
 
   	def initialize(api_url, api_password)
-  		@api_url = api_url
-  		@api_password = api_password	
-  		@alive = self.alive? #fails whenever url is bad
+  		if api_url =~ URI::regexp
+	  		@api_url = api_url
+	  		@api_password = api_password	
+	  		@alive = self.alive?			
+  		else
+  			raise "Bad API URL provided."
+  		end
   	end
 
 	def ping_a_parser
