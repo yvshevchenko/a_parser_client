@@ -48,7 +48,7 @@ Or install it yourself as:
 ```ruby
 require 'a_parser_client'
 
-api = AParserClient::API.new 'http://142.54.182.130:9091/API, ''
+api = AParserClient::API.new 'http://<your_host_running_aparser>:9091/API, ''
 api.ping
 
 $> {"success" : 1, "data" : "pong"}
