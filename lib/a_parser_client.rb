@@ -98,6 +98,87 @@ module AParserClient
 		do_it request		
 	end
 
+	def get_accounts_count
+		request = {
+			password: @api_password, 
+			action: 'getAccountsCount',
+			data: {}
+		}
+		do_it request		
+	end
+
+
+	def get_proxies
+		request = {
+			password: @api_password, 
+			action: 'getProxies'
+		}
+		do_it request		
+	end
+
+	def update!
+		request = {
+			password: @api_password, 
+			action: 'update',
+			data: {}
+		}
+		do_it request		
+	end	
+
+	def get_task_results_file(task_id)
+		request = {
+			password: @api_password, 
+			action: 'getTaskResultsFile',
+			data: {taskUid: task_id}
+		}
+		do_it request
+	end	
+
+	def delete_task_results_file(task_id)
+		request = {
+			password: @api_password, 
+			action: 'deleteTaskResultsFile',
+			data: {taskUid: task_id}
+		}
+		do_it request
+	end	
+
+	def move_task(task_id, direction)
+		request = {
+			password: @api_password, 
+			action: 'moveTask',
+			data: {
+				taskUid: task_id,
+				toStatus: direction
+			}
+		}
+		do_it request		
+	end	
+
+	def get_parser_info(parser_name)
+		request = {
+			password: @api_password, 
+			action: 'getParserInfo',
+			data: {
+				parser: parser_name
+			}
+		}
+		do_it request		
+	end	
+
+
+	def get_parser_preset(parser_name, preset_name)
+		request = {
+			password: @api_password, 
+			action: 'getParserInfo',
+			data: {
+				parser: parser_name,
+				reset: preset_name
+			}
+		}
+		do_it request		
+	end	
+
 
 		private # internal use only
 

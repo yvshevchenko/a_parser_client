@@ -1,5 +1,7 @@
 # AParserClient
 
+[![Gem Version](https://badge.fury.io/rb/a_parser_client.svg)](https://badge.fury.io/rb/a_parser_client)
+
 Ruby client for A-Parser user API.
 
 This is a test release, more API coverage is upcoming.
@@ -13,19 +15,21 @@ Covered for now:
 	-	getTaskConf
 	-	addTask
 	-	changeTaskStatus
+	-	getAccountsCount	
+	-	getProxies	
+	-	update	
+	-	getTaskResultsFile	
+	-	deleteTaskResultsFile	
+	-	moveTask	
+	-	getParserInfo	
+	-	getParserPreset	
 
 TODO:
 
 	-	oneRequest
 	-	bulkRequest
-	-	getParserPreset
-	-	getProxies
-	-	getTaskResultsFile
-	-	deleteTaskResultsFile
-	-	moveTask
-	-	getParserInfo
-	-	update
-	-	getAccountsCount	
+
+
 
 ## Installation
 
@@ -44,6 +48,10 @@ Or install it yourself as:
     $ gem install a_parser_client
 
 ## Usage
+
+There will be a wiki page soon.
+
+The code sample below is all for now...
 
 ```ruby
 require 'a_parser_client'
@@ -70,4 +78,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the AParserClient project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/yvshevchenko	/a_parser_client/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the AParserClient project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/yvshevchenko/a_parser_client/blob/master/CODE_OF_CONDUCT.md).
