@@ -46,7 +46,7 @@ module AParserClient
 	def get_task_state(task_id)
 		request = {
 			password: @api_password, 
-			action: 'getTasksState',
+			action: 'getTaskState',
 			data: {taskUid: task_id}
 		}
 		do_it request
@@ -55,7 +55,7 @@ module AParserClient
 	def get_task_conf(task_id)
 		request = {
 			password: @api_password, 
-			action: 'getTasksConf',
+			action: 'getTaskConf',
 			data: {taskUid: task_id}
 		}
 		do_it request

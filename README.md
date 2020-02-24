@@ -1,5 +1,32 @@
 # AParserClient
 
+Ruby client for A-Parser user API.
+
+This is a test release, more API coverage is upcoming.
+
+Covered for now:
+
+	-	ping
+	-	info
+	- 	getTaskList
+	-	getTaskState
+	-	getTaskConf
+	-	addTask
+	-	changeTaskStatus
+
+TODO:
+
+	-	oneRequest
+	-	bulkRequest
+	-	getParserPreset
+	-	getProxies
+	-	getTaskResultsFile
+	-	deleteTaskResultsFile
+	-	moveTask
+	-	getParserInfo
+	-	update
+	-	getAccountsCount	
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -18,7 +45,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'a_parser_client'
+
+api = AParserClient::API.new 'http://142.54.182.130:9091/API, ''
+api.ping
+
+$> {"success" : 1, "data" : "pong"}
+```
 
 ## Development
 
