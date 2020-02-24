@@ -123,7 +123,11 @@ module AParserClient
 			end
 
 			if res
-			  response = JSON.parse res.body
+				begin
+					response = JSON.parse res.body
+				rescue JSON::ParserError => e
+					raise "Not a JSON type response from the server #{@api_url}. Probably not an API endpoint."
+				end
 			else
 			  nil
 			end
