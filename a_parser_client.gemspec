@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Yaroslav Shevchenko"]
   spec.email         = ["yvshevchenko@gmail.com"]
 
-  spec.summary       = %q{A simple inerface to a-parser API.}
-  spec.description   = %q{Gem allowing to use a-parser API simple way.}
+  spec.summary       = %q{A simple inerface to A-Parser API.}
+  spec.description   = %q{Gem allowing to use A-Parser API simple way.}
   spec.homepage      = "https://github.com/yvshevchenko/a_parser_client"
   spec.license       = "MIT"
 
@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/yvshevchenko/a_parser_client"
-  spec.metadata["changelog_uri"] = "https://github.com/yvshevchenko/a_parser_client"
+  spec.metadata["changelog_uri"] = "https://github.com/yvshevchenko/a_parser_client/wiki/Changes-Log"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

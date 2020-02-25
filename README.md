@@ -56,10 +56,10 @@ The code sample below is all for now...
 ```ruby
 require 'a_parser_client'
 
-api = AParserClient::API.new 'http://<your_host_running_aparser>:9091/API, ''
-api.ping
+ api = AParserClient::API.new 'http://<your_host_running_aparser>:9091/API, ''
+ api.ping
 
-$> {"success" : 1, "data" : "pong"}
+=> {"success" : 1, "data" : "pong"}
 ```
 
 ## Development

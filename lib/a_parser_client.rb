@@ -20,7 +20,7 @@ module AParserClient
   		end
   	end
 
-	def ping_a_parser
+	def ping
 		request = {
 			password: @api_pass, 
 			action: 'ping'
@@ -30,7 +30,7 @@ module AParserClient
 
 	#updates alive status
 	def alive?
-		@alive = ping_a_parser ? true : false
+		@alive = ping ? true : false
 	end  
 
 
