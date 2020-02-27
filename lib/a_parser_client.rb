@@ -86,6 +86,41 @@ module AParserClient
 		do_it request
 	end
 
+
+	def one_request(query, parser, preset='default', config_preset='default', options=[])
+		request = {
+			password: 	@api_password, 
+			action: 	'oneRequest',
+			data: {
+				query: query,
+				parser: parser, 
+				configPreset: config_preset,
+				preset: preset,
+				options: options
+			}
+		}
+		do_it request
+	end
+
+	def bulk_request(queries=[], parser, preset='default', config_preset='default', threads, raw_results=0, need_data=0, options=[])
+		request = {
+			password: 	@api_password, 
+			action: 	'bulkRequest',
+			data: {
+				queries: queries,
+				parser: parser, 
+				configPreset: config_preset,
+				preset: preset,
+				threads: threads,
+				rawResults: raw_results,
+				needData: need_data,
+				options: options
+			}
+		}
+		do_it request
+	end
+
+
 	def change_task_status(task_id, to_status)
 		request = {
 			password: @api_password, 

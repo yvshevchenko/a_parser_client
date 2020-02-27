@@ -8,27 +8,29 @@ This is a test release, more API coverage is upcoming.
 
 Covered for now:
 
-	-	ping
-	-	info
-	- 	getTaskList
-	-	getTaskState
-	-	getTaskConf
-	-	addTask
-	-	changeTaskStatus
-	-	getAccountsCount	
-	-	getProxies	
-	-	update	
-	-	getTaskResultsFile	
-	-	deleteTaskResultsFile	
-	-	moveTask	
-	-	getParserInfo	
-	-	getParserPreset	
+-	ping
+-	info
+- 	getTaskList
+-	getTaskState
+-	getTaskConf
+-	addTask
+-	changeTaskStatus
+-	getAccountsCount	
+-	getProxies	
+-	update	
+-	getTaskResultsFile	
+-	deleteTaskResultsFile	
+-	moveTask	
+-	getParserInfo	
+-	getParserPreset	
+-	oneRequest
+-	bulkRequest
 
 TODO:
 
-	-	oneRequest
-	-	bulkRequest
+Some automation procedures:
 
+-	multitasks operations (like stop all tasks etc.)
 
 
 ## Installation
