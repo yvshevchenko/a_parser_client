@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    a_parser_client (0.1.7)
+    a_parser_client (0.1.8)
 
 GEM
   remote: https://rubygems.org/
