@@ -8,11 +8,16 @@ module AParserClient
 		attr_reader :tasks
 
 		def initialize(api_driver)
-			unless api_driver.alive?
-				raise "API driver should be alive to take control of parser."
+			if api_driver
+				unless api_driver.alive?
+					raise "API driver should be alive to take control of parser."
+				end
+
+				@tasks = fetch_tasks				
+			else
+				raise "No API driver provided."
 			end
 
-			@tasks = fetch_tasks
 		end
 
 		def fetch_tasks
