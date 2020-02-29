@@ -99,7 +99,7 @@ module AParserClient
 		do_it request
 	end
 
-	def bulk_request(queries=[], parser, preset='default', config_preset='default', threads, raw_results=0, need_data=0, options=[])
+	def bulk_request(queries=[], parser, preset="default", config_preset="default", threads, raw_results=0, need_data=0, options=[])
 		request = {
 			password: 	@api_password, 
 			action: 	'bulkRequest',
