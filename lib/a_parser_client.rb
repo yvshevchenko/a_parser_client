@@ -5,11 +5,13 @@ module AParserClient
 	class Error < StandardError; end
 
 	class Control
-		attr_reader :tasks
+		attr_reader :tasks, :driver
 
 		def initialize(api_driver)
-			if api_driver
-				unless api_driver.alive?
+			@driver = api_driver
+
+			if @driver
+				unless @driver.alive?
 					raise "API driver should be alive to take control of parser."
 				end
 
@@ -21,7 +23,7 @@ module AParserClient
 		end
 
 		def fetch_tasks
-			data = api_driver.get_tasks_list
+			data = @driver.get_tasks_list
 			data['data'] ? data['data'] : []
 		end
 	end
