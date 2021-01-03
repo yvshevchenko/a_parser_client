@@ -216,8 +216,7 @@ module AParserClient
 
 	def do_it(request)
 		request_body = request.to_json
-		response = send_request(request_body)
-		return response		
+		send_request(request_body)
 	end
 
 	def send_request(request)
@@ -237,7 +236,7 @@ module AParserClient
 
 			if res
 				begin
-					response = JSON.parse res.body
+					JSON.parse res.body
 				rescue JSON::ParserError => e
 					raise "Not a JSON type response from the server #{@api_url}. Probably not an API endpoint."
 				end
