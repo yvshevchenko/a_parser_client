@@ -1,30 +1,27 @@
-require "a_parser_client/version"
-require "a_parser_client/api"
+# frozen_string_literal: true
+
+require 'a_parser_client/version'
+require 'a_parser_client/api'
 
 module AParserClient
-	class Error < StandardError; end
+  class Error < StandardError; end
 
-	class Control
-		attr_reader :tasks, :driver
+  class Control
+    attr_reader :tasks, :driver
 
-		def initialize(api_driver)
-			@driver = api_driver
+    def initialize(api_driver)
+      @driver = api_driver
 
-			if @driver
-				unless @driver.alive?
-					raise "API driver should be alive to take control of parser."
-				end
+      raise 'No API driver provided.' unless @driver
 
-				@tasks = fetch_tasks				
-			else
-				raise "No API driver provided."
-			end
+      raise 'API driver should be alive to take control of parser.' unless @driver.alive?
 
-		end
+      @tasks = fetch_tasks
+    end
 
-		def fetch_tasks
-			data = @driver.get_tasks_list
-			data['data'] ? data['data'] : []
-		end
-	end
+    def fetch_tasks
+      data = @driver.get_tasks_list
+      data['data'] || []
+    end
+  end
 end
